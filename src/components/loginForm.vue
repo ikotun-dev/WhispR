@@ -1,5 +1,5 @@
 <template>
-    <!-- <AppHeader></AppHeader> -->
+    <HeaderTop></HeaderTop>
     <div class="bg-indigo-300 flex justify-center h-screen">
       <div
         class="bg-white mt-40 mb-20 w-80 h-[450px] p-6 shadow-lg rounded-md sm:mt-10 sm:w-96 md:w-96"
@@ -54,12 +54,13 @@
   </template>
   <script>
   //import AppHeader from './AppHeader.vue';
-  import axios from 'axios'
+  import axiosInstance from './axiosInstance'
+  import HeaderTop from './HeaderTop'
 
   export default {
     name: "LoginForm",
     components: {
-      //  AppHeader,
+      HeaderTop
     },
     data() {
       return {
@@ -70,13 +71,13 @@
     },
     methods : {
       async handleSubmit() {
-          axios.post('http://127.0.0.1:8000/api/login', {
+          axiosInstance.post('/api/login', {
             username: this.username,
             password: this.password
           })
           .then(response => { 
             console.log(response.data.token)
-            
+            this.$router.push('/home')
           } )
       }
     }

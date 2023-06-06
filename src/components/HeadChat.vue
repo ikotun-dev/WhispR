@@ -11,7 +11,7 @@ import ChatHead from "./ChatHead";
 export default {
   components: {
     HeaderTop,
-    loginForm,
+    ChatHead,
   },
 };
 </script>

@@ -3,7 +3,7 @@
     class="py-2 px-4 bg-black h-20 flex"
     v-for="user in users"
     :key="user.id"
-    @click="goToChatPage"
+    @click="goToChatPage(user.name, user.profile_image)"
   >
     <img class="h-16 w-16 rounded-full" :src="user.profile_image" />
     <div class="ml-4">
@@ -75,13 +75,12 @@ export default {
   }, //created
 
   methods: {
-    goToChatPage(user) {
+    goToChatPage(username, profileimage) {
       this.$router.push({
         path: "/chatpage",
         query: {
-          userId: user.id,
-          userName: user.name,
-          userImage: user.profile_image,
+          userName: username,
+          userImage: profileimage,
         },
       });
     },

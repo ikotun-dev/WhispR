@@ -55,8 +55,8 @@ export default {
   methods: {
     //implementing patch in axios
     sendThemessage(){
-        this.inputMessage
-
+        newMessage = this.inputMessage
+        
     },
 
     sendMessage() {

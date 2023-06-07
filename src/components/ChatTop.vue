@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-blue-900 h-24 pt-4 px-4 sm:flex sm:items-center sm:justify-between">
+    <div class="bg-black h-24 pt-4 px-4 sm:flex sm:items-center sm:justify-between">
         <button class="text-white .wave-emoji text-xl" @click="goBack">&leftarrow;</button>
     
     <div class="m-auto">

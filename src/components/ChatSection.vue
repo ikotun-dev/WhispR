@@ -1,12 +1,20 @@
 <template>
-  <div class="chat-messages mt-2 mx-2">
-    <div v-for="message in messages" :key="message.id">
-      {{ message.content }}
+  <div class="chat-messages pt-2 px-2 bg-black">
+    <div class="bg-black h-100">
+      <senderMessage></senderMessage>
+      <recipientMessage></recipientMessage>
+      <senderMessage></senderMessage>
+      <recipientMessage></recipientMessage>
+      <senderMessage></senderMessage>
+      <recipientMessage></recipientMessage>
+      <recipientMessage></recipientMessage>
+      <recipientMessage></recipientMessage>
+      
     </div>
 
-    <div class="chat-input">
+    <div class="chat-input fixed bottom-0 left-0 right-0 px-2 py-2">
       <input
-        class="w-72 py-2 px-2 border focus:outline-none focus:ring-2 focus:ring-offset-blue-900 rounded-lg ring-1 ring-blue-950"
+        class="w-72 h-8 py-2 px-2 border focus:outline-none focus:ring-2 focus:ring-offset-blue-900 rounded-lg ring-1 ring-blue-950 rela"
         v-model="inputMessage"
         type="text"
         placeholder="Type your message"
@@ -17,6 +25,8 @@
 </template>
 <script>
 import axios from "axios";
+import recipientMessage from "./recipientMessage";
+import senderMessage from "./senderMessage";
 
 export default {
   props: {
@@ -30,6 +40,11 @@ export default {
     },
   },
 
+  components: {
+    recipientMessage,
+    senderMessage,
+  },
+
   data() {
     return {
       messages: [],
@@ -38,8 +53,7 @@ export default {
   },
 
   methods: {
-
-    //implementing patch in axios 
+    //implementing patch in axios
     sendMessage() {
       axios
         .patch("https:///jsonplaceholder.typicode.com/posts/1", {

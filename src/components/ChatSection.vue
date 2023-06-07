@@ -9,7 +9,7 @@
       <recipientMessage></recipientMessage>
       <recipientMessage></recipientMessage>
       <recipientMessage></recipientMessage>
-      
+
     </div>
 
     <div class="chat-input fixed bottom-0 left-0 right-0 px-2 py-2">
@@ -19,7 +19,7 @@
         type="text"
         placeholder="Type your message"
       />
-      <button class="ml-4" @click="sendMessage">&rightarrow;</button>
+      <button class="ml-4 w-8 h-8 font-extrabold" @click="sendMessage">&rightarrow;</button>
     </div>
   </div>
 </template>
@@ -54,6 +54,11 @@ export default {
 
   methods: {
     //implementing patch in axios
+    sendThemessage(){
+        this.inputMessage
+
+    },
+
     sendMessage() {
       axios
         .patch("https:///jsonplaceholder.typicode.com/posts/1", {

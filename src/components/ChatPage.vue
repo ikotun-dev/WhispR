@@ -1,11 +1,15 @@
 <template>
     <ChatTop :userProfile="userProfile" :userName="userName"></ChatTop>
+    <ChatSection></ChatSection>
 </template>
 <script>
 import ChatTop from './ChatTop'
+import ChatSection from './ChatSection'
+
 export default{
     components: {
-        ChatTop
+        ChatTop,
+        ChatSection,
     },
 
     data(){
